@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TransMorales | Transporte escolar y de personal en la Ciudad de México</title>
+<meta name="description" content="Transporte escolar, de personal y ejecutivo en la Ciudad de México. Más de 30 años de experiencia, unidades con mantenimiento preventivo y operadores capacitados.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --surface:#eef2f7; --ink:#12213f; --muted:#4a5a77; --brand:#16356b; --brand-ink:#ffffff;
+  --accent:#f2a900; --accent-ink:#1a1a1a; --line:#d5dce8;
+  --head:"Bricolage Grotesque","Trebuchet MS",Arial,sans-serif; --body:"Source Sans 3","Segoe UI",Arial,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1730; --surface:#16213f; --ink:#eef2fb; --muted:#aab6d0; --brand:#8fb2ff; --brand-ink:#0e1730;
+    --line:#2a3858; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1730; --surface:#16213f; --ink:#eef2fb; --muted:#aab6d0; --brand:#8fb2ff; --brand-ink:#0e1730;
+  --line:#2a3858; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body)}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:800}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800}
+h3{font-size:1.25rem;font-weight:600}
+p{margin:0 0 1em;max-width:62ch}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+section{padding:4.5rem 0}
+.page{display:none;min-height:60vh}.page.on{display:block}
+nav a[aria-current=page]{color:var(--ink);border-bottom:3px solid var(--accent);padding-bottom:2px}
+.alt{background:var(--surface)}
+.btn{display:inline-block;padding:.85rem 1.4rem;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid transparent;cursor:pointer;font:600 1rem var(--body)}
+.btn-main{background:var(--accent);color:var(--accent-ink)}
+.btn-main:hover{filter:brightness(1.07)}
+.btn-ghost{border-color:currentColor}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:1rem 0}
+.logo{font:800 1.4rem var(--head);text-decoration:none;color:var(--brand)}
+nav a{margin-left:1.1rem;text-decoration:none;font-weight:600;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.hero{padding:3rem 0 4.5rem}
+.hero p.lead{font-size:1.25rem;color:var(--muted);max-width:52ch}
+.cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem}
+.route{margin-top:3.5rem;width:100%;height:auto;color:var(--brand)}
+.route text{font:600 15px var(--body);fill:var(--ink)}
+.route .dash{stroke-dasharray:6 8;animation:go 1.6s linear infinite}
+@keyframes go{to{stroke-dashoffset:-28}}
+@media (prefers-reduced-motion:reduce){.route .dash{animation:none}}
+.grid{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.fact{border-top:4px solid var(--accent);padding-top:.8rem}
+.fact p{color:var(--muted);margin:0}
+.svc{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.svc article{border:1px solid var(--line);border-radius:12px;padding:1.6rem;background:var(--bg);display:flex;flex-direction:column;gap:.4rem}
+.svc article p{color:var(--muted)}
+.svc ul{padding-left:1.1rem;margin:0 0 1.2rem;color:var(--muted)}
+.svc .btn{margin-top:auto;align-self:flex-start}
+.split{display:grid;gap:3rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start}
+.vals{display:flex;flex-wrap:wrap;gap:.6rem;padding:0;list-style:none;margin:1rem 0 0}
+.vals li{background:var(--brand);color:var(--brand-ink);padding:.35rem .9rem;border-radius:999px;font-weight:600}
+.since{font:800 clamp(5rem,16vw,9rem)/1 var(--head);color:var(--brand);margin:0}
+.checks{list-style:none;padding:0;margin:0;display:grid;gap:.9rem}
+.checks li{padding-left:2rem;position:relative}
+.checks li::before{content:"";position:absolute;left:0;top:.45em;width:1.1rem;height:.6rem;border-left:3px solid var(--accent);border-bottom:3px solid var(--accent);transform:rotate(-45deg)}
+form{display:grid;gap:1rem}
+label{display:grid;gap:.3rem;font-weight:600}
+input,select,textarea{font:400 1rem var(--body);padding:.75rem;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}
+textarea{min-height:110px;resize:vertical}
+.note{font-size:.95rem;color:var(--muted)}
+footer{background:var(--brand);color:var(--brand-ink);padding:2.5rem 0}
+footer p{margin:.2rem 0;max-width:none}
+.wa{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:5;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#inicio">TransMorales</a>
+    <nav aria-label="Principal">
+      <a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#seguridad">Flota y seguridad</a><a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+</div>
+
+<main>
+<div class="page" data-page="inicio">
+<section class="hero">
+  <div class="wrap">
+    <h1>Transporte seguro y confiable desde 1977</h1>
+    <p class="lead">Llevamos a estudiantes y trabajadores a su destino con puntualidad, unidades en buen estado y operadores capacitados. Tranquilidad para las familias y productividad para las empresas.</p>
+    <div class="cta">
+      <a class="btn btn-main" href="#contacto">Solicitar cotización</a>
+      <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+    </div>
+    <svg class="route" viewBox="0 0 900 120" role="img" aria-label="Ruta de casa a escuela o empresa">
+      <path class="dash" d="M60 60 C 240 10, 330 110, 450 60 S 700 10, 840 60" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+      <g fill="var(--accent)" stroke="currentColor" stroke-width="4"><circle cx="60" cy="60" r="12"/><circle cx="450" cy="60" r="12"/><circle cx="840" cy="60" r="12"/></g>
+      <text x="60" y="108" text-anchor="middle">Casa</text><text x="450" y="108" text-anchor="middle">Escuela</text><text x="840" y="108" text-anchor="middle">Empresa</text>
+    </svg>
+  </div>
+</section>
+
+<section class="alt" aria-label="Por qué elegirnos">
+  <div class="wrap grid">
+    <div class="fact"><h3>Seguridad</h3><p>Equipo de seguridad, botiquín y seguro en cada unidad.</p></div>
+    <div class="fact"><h3>Puntualidad</h3><p>Rutas planeadas y supervisión durante todo el traslado.</p></div>
+    <div class="fact"><h3>Operadores capacitados</h3><p>Entrenados en seguridad y atención de emergencias.</p></div>
+    <div class="fact"><h3>Más de 30 años</h3><p>Experiencia en transporte escolar y de personal.</p></div>
+  </div>
+</section>
+
+</div>
+<div class="page" data-page="nosotros">
+<section>
+  <div class="wrap split">
+    <div>
+      <p class="since" aria-hidden="true">1977</p>
+      <h2>Una empresa familiar con trayectoria</h2>
+      <p>TransMorales fue fundada en 1977 por Jorge Luis Morales. Desde entonces trabajamos para ser un referente en transporte moderno de personal y escolar, con valores sólidos y recursos eficientes.</p>
+      <ul class="vals"><li>Calidad</li><li>Seguridad</li><li>Confianza</li><li>Eficiencia</li><li>Puntualidad</li></ul>
+    </div>
+    <div>
+      <h3>Misión</h3>
+      <p>Ser líderes en transporte moderno de personal y escolar, con valores sólidos y recursos eficientes.</p>
+      <h3>Visión</h3>
+      <p>Ofrecer un servicio seguro, confiable, eficiente y puntual, con operadores profesionales.</p>
+    </div>
+  </div>
+</section>
+
+</div>
+<div class="page" data-page="servicios">
+<section class="alt">
+  <div class="wrap">
+    <h2>Servicios</h2>
+    <div class="svc">
+      <article>
+        <h3>Transporte escolar</h3>
+        <p>Rutas diarias para que los padres sepan que sus hijos llegan bien.</p>
+        <ul><li>Rutas planeadas</li><li>Comunicación por radio</li><li>Operadores capacitados</li></ul>
+        <a class="btn btn-main" href="#contacto" data-svc="Transporte escolar">Solicitar cotización</a>
+      </article>
+      <article>
+        <h3>Transporte de personal</h3>
+        <p>Traslados puntuales para equipos de trabajo, pensados para la productividad.</p>
+        <ul><li>Horarios y rutas a la medida</li><li>Supervisión constante</li><li>Unidades aseguradas</li></ul>
+        <a class="btn btn-main" href="#contacto" data-svc="Transporte de personal">Solicitar cotización</a>
+      </article>
+      <article>
+        <h3>Transporte ejecutivo y eventos</h3>
+        <p>Servicio para viajes, eventos y salidas especiales de grupos.</p>
+        <ul><li>Cotización por viaje</li><li>Unidades en buen estado</li><li>Atención personalizada</li></ul>
+        <a class="btn btn-main" href="#contacto" data-svc="Transporte ejecutivo y eventos">Solicitar cotización</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+</div>
+<div class="page" data-page="seguridad">
+<section>
+  <div class="wrap split">
+    <div>
+      <h2>Flota y seguridad</h2>
+      <p>Cada traslado cuenta con respaldo y supervisión. Nuestras políticas de calidad y seguridad se aplican a todas las unidades.</p>
+    </div>
+    <ul class="checks">
+      <li>Mantenimiento preventivo y correctivo</li>
+      <li>Equipo de seguridad y botiquín en cada unidad</li>
+      <li>Seguro vigente</li>
+      <li>Comunicación por radio durante el trayecto</li>
+      <li>Planeación de rutas</li>
+      <li>GPS disponible como opción</li>
+    </ul>
+  </div>
+</section>
+
+</div>
+<div class="page" data-page="contacto">
+<section class="alt">
+  <div class="wrap split">
+    <div>
+      <h2>Pide tu cotización</h2>
+      <p>Cuéntanos qué necesitas y te respondemos a la brevedad.</p>
+      <p><strong>Teléfono</strong><br><a href="tel:+525552714967">5271 4967</a> / <a href="tel:+525552714918">5271 4918</a></p>
+      <p><strong>Correo</strong><br><a href="mailto:contacto@transmorales.com.mx">contacto@transmorales.com.mx</a></p>
+      <p class="note">Horario de atención: agrega aquí tus días y horas.</p>
+    </div>
+    <form id="cot">
+      <label>Nombre<input name="nombre" required autocomplete="name"></label>
+      <label>Teléfono<input name="tel" type="tel" required autocomplete="tel"></label>
+      <label>Correo<input name="mail" type="email" autocomplete="email"></label>
+      <label>Tipo de servicio
+        <select name="svc" id="svc"><option>Transporte escolar</option><option>Transporte de personal</option><option>Transporte ejecutivo y eventos</option></select>
+      </label>
+      <label>Mensaje<textarea name="msg"></textarea></label>
+      <button class="btn btn-main" type="submit">Enviar cotización</button>
+    </form>
+  </div>
+</section>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>TransMorales</strong> · Transportes Morales</p>
+    <p>Transporte escolar, de personal y ejecutivo en la Ciudad de México.</p>
+    <p>Tel. 5271 4967 / 5271 4918 · contacto@transmorales.com.mx</p>
+    <p>© 2026 TransMorales. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<a class="btn btn-main wa" href="tel:+525552714967">Llamar</a>
+
+<script>
+var pages = document.querySelectorAll(".page"), links = document.querySelectorAll("nav a");
+function route(){
+  var h = location.hash.slice(1) || "inicio", found = false;
+  pages.forEach(function(p){ var on = p.dataset.page === h; p.classList.toggle("on", on); if (on) found = true; });
+  if (!found) { pages[0].classList.add("on"); h = "inicio"; }
+  links.forEach(function(a){ if (a.getAttribute("href") === "#" + h) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
+  window.scrollTo(0, 0);
+}
+window.addEventListener("hashchange", route);
+route();
+document.querySelectorAll("[data-svc]").forEach(function(a){
+  a.addEventListener("click", function(){ document.getElementById("svc").value = a.getAttribute("data-svc"); });
+});
+document.getElementById("cot").addEventListener("submit", function(e){
+  e.preventDefault();
+  var f = e.target;
+  var t = "Hola, soy " + f.nombre.value + ". Quiero cotizar: " + f.svc.value + ". Tel: " + f.tel.value +
+    (f.mail.value ? ". Correo: " + f.mail.value : "") + (f.msg.value ? ". " + f.msg.value : "");
+  location.href = "mailto:contacto@transmorales.com.mx?subject=" + encodeURIComponent("Cotización: " + f.svc.value) + "&body=" + encodeURIComponent(t);
+});
+</script>
+</body>
+</html>
